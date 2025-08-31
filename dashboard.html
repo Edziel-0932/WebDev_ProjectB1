@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>E-Waste Marketplace</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header class="ew-nav">
+    <div class="nav-logo">
+      <img src="eWasteLogo.jpg" alt="E-Waste Logo" />
+      <span class="ew-brand">E-Waste</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">My Items</a>
+      <a href="#">Browse</a>
+      <a href="#">Tips</a>
+    </nav>
+    <div class="nav-profile">
+      <!-- Profile will be filled by JS -->
+    </div>
+  </header>
+
+  <!-- Main Dashboard -->
+  <main class="ew-main">
+    <div class="ew-market-header">
+      <h1>Find or Post Pre-loved Electronics</h1>
+      <button class="ew-post-btn">+ Post New Item</button>
+    </div>
+    <!-- Item Grid: Cards inserted by JS -->
+    <div class="ew-grid"></div>
+  </main>
+
+  <!-- Post New Item Modal -->
+  <div id="postItemModal" class="ew-modal">
+    <div class="ew-modal-content">
+      <span class="ew-close" id="postModalClose" title="Close">&times;</span>
+      <h2>Post New Item</h2>
+      <form id="postItemForm">
+        <label>
+          Item Title:<br>
+          <input type="text" name="title" required autocomplete="off">
+        </label><br><br>
+        <label>
+          Description:<br>
+          <textarea name="desc" rows="3" required></textarea>
+        </label><br><br>
+        <label>
+          Image File Name (e.g. ElectricFan.jpg):<br>
+          <input type="text" name="image" placeholder="Optional">
+        </label><br><br>
+        <button type="submit" class="ew-post-btn">Post Item</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Claim Item Modal -->
+  <div id="claimModal" class="ew-modal">
+    <div class="ew-modal-content">
+      <span class="ew-close" id="claimModalClose" title="Close">&times;</span>
+      <h2>Claim Item</h2>
+      <p id="claimModalMsg">Do you want to claim this item?</p>
+      <div class="ew-modal-actions">
+        <button id="claimCancelBtn" class="ew-modal-btn ew-cancel-btn" type="button">Cancel</button>
+        <button id="claimConfirmBtn" class="ew-modal-btn ew-confirm-btn" type="button">Claim</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success & Info Modal -->
+  <div id="successModal" class="ew-modal">
+    <div class="ew-modal-content">
+      <span class="ew-close" id="successModalClose" title="Close">&times;</span>
+      <h2 style="margin-top:0;">Success!</h2>
+      <div id="successModalMsg"></div>
+      <div class="ew-modal-actions">
+        <button id="successOkBtn" class="ew-modal-btn ew-confirm-btn" type="button">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
